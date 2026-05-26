@@ -1,0 +1,33 @@
+INSERT INTO customers (
+    customer_id,
+    first_name,
+    last_name,
+    email,
+    phone,
+    geolocation_id
+)
+VALUES
+(
+    gen_random_uuid(),
+    'Camilo',
+    'Mora',
+    'camilo@hotmail.com',
+    '3001111111',
+    1
+),
+(
+    gen_random_uuid(),
+    'Alejandro',
+    'Lopez',
+    'alejandro@gmail.com',
+    '3002222222',
+    2
+),
+(
+    gen_random_uuid(),
+    'Carlos',
+    'Zambrano',
+    'carlos@hotmail.com',
+    '3003333333',
+    3
+);
