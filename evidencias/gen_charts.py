@@ -60,3 +60,43 @@ barras_antes_despues(
     [15.07], [3.07],
     "PostgreSQL — Particionamiento por RANGE (partition pruning)",
     "Sin particionar: escanea tabla completa · Con particionar: 1 de 15 particiones · Fuente: RESULTADOS_Parte2.md")
+
+# 4) MongoDB — impacto de índices (.explain executionStats) — PDF V2 sec.2.2
+barras_antes_despues(
+    "04_mongodb_indices",
+    ["ESR categoría+precio\n(compuesto)", "status=ACTIVE\n(parcial)", "product+score\n(reseñas)"],
+    [18.4, 12.7, 8.9],
+    [1.8, 1.2, 0.7],
+    "MongoDB — Impacto de índices (executionTimeMillis)",
+    "Fuente: PDF V2 sección 2.2 · .explain(\"executionStats\") · colecciones products (1.000) y order_reviews (500)")
+
+# 5) MongoDB — aggregation pipeline (3 escenarios) — PDF V2 sec.2.3
+def barras_escenarios(nombre, etiquetas, valores, titulo, subt):
+    x = np.arange(len(etiquetas))
+    colores = [ROJO, "#c9772b", VERDE]
+    fig, ax = plt.subplots(figsize=(9, 5))
+    b = ax.bar(x, valores, 0.55, color=colores[:len(valores)])
+    ax.set_ylabel("executionTimeMillis (ms)")
+    ax.set_title(titulo, fontweight="bold")
+    ax.set_xticks(x); ax.set_xticklabels(etiquetas, fontsize=9)
+    ax.set_ylim(0, max(valores)*1.18)
+    for bar in b:
+        h = bar.get_height()
+        ax.annotate(f"{h:.0f} ms", (bar.get_x()+bar.get_width()/2, h),
+                    textcoords="offset points", xytext=(0,3), ha="center", fontsize=9, fontweight="bold")
+    mej = (valores[0]-valores[-1])/valores[0]*100
+    ax.annotate(f"-{mej:.1f}% total", (x[-1], valores[-1]),
+                textcoords="offset points", xytext=(0,22), ha="center",
+                fontsize=10, fontweight="bold", color=VERDE)
+    fig.text(0.5, 0.01, subt, ha="center", fontsize=8, style="italic", color="#555")
+    fig.tight_layout(rect=[0,0.03,1,1])
+    fig.savefig(f"{OUT}/{nombre}.png", dpi=150)
+    plt.close(fig)
+    print("OK", nombre)
+
+barras_escenarios(
+    "05_mongodb_pipeline",
+    ["Sin $match\nni índices", "Índice parcial\npero $match al final", "$match al inicio\ne índices activos"],
+    [284, 187, 43],
+    "MongoDB — Aggregation pipeline analítico (7 stages)",
+    "docsExamined: 1.000 → 1.000 → 198 · Fuente: PDF V2 sección 2.3 · allowDiskUse: true")

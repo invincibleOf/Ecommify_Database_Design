@@ -1,6 +1,12 @@
 -- =============================================================================
 -- 13_tipos_avanzados_hibrido.sql
 -- -----------------------------------------------------------------------------
+-- ESTADO: PROPUESTA DE EVOLUCIÓN FUTURA — NO ejecutada en el Entregable 2.
+-- En esta entrega el esquema PostgreSQL se mantiene relacional puro (sin JSONB);
+-- la flexibilidad documental se resuelve en MongoDB (Attribute/Embedding). Este
+-- script se conserva como camino de evolución si más adelante se decide llevar
+-- atributos semiestructurados también a PostgreSQL.
+-- -----------------------------------------------------------------------------
 -- Enfoque HÍBRIDO: añade tipos nativos avanzados y extensiones SOBRE el esquema
 -- real ya cargado en Supabase (estructura Olist), sin rehacer la implementación
 -- ni las evidencias EXPLAIN existentes (ver Tarea4/scripts/RESULTADOS_Parte2.md).

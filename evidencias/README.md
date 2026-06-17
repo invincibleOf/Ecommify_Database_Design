@@ -27,10 +27,17 @@ se consolidan las **gráficas comparativas** generadas a partir de esas medicion
 - El **particionamiento** es la técnica de mayor impacto estructural (79,6%) y la que
   mejor escala con el crecimiento del histórico de órdenes.
 
-## Pendiente (evidencia de MongoDB)
-Faltan las capturas de `.explain("executionStats")` de MongoDB (antes/después) —
-responsabilidad de P2. Al incorporarlas, agregar aquí una gráfica equivalente de
-`executionTimeMillis` y `docsExamined`.
+## Gráficas MongoDB
+
+| Figura | Archivo | Qué muestra | Fuente de datos |
+|---|---|---|---|
+| 4 | `04_mongodb_indices.png` | Impacto de 3 índices (compuesto ESR, parcial, reseñas) en `executionTimeMillis`. | PDF V2, sección 2.2 (`.explain("executionStats")`) |
+| 5 | `05_mongodb_pipeline.png` | Aggregation pipeline (7 stages): 284 → 187 → 43 ms (−84,9 %) según ubicación del `$match`. | PDF V2, sección 2.3 |
+
+## Capturas EXPLAIN reales (PostgreSQL)
+La subcarpeta `explain_postgresql/` contiene las capturas de `EXPLAIN (ANALYZE, BUFFERS)`
+extraídas del documento técnico: partition pruning y las queries Q1/Q5/Q3 antes y después
+de optimizar. Están embebidas en `docs/Documento_Tecnico_Ecommify_E01.docx`.
 
 ## Cómo regenerar las gráficas
 ```bash
