@@ -9,8 +9,15 @@ modelado de documentos, aggregation pipelines y diseño teórico de sharding/rep
 > Asignatura: EFMAS-DOBD20263 · Unidad 5 — Optimización de rendimiento · Equipo E01
 
 ---
+## PResetnacion y sustentecion de arquitectura
+
+https://drive.google.com/file/d/12NT4Gd8R7VCd7zA6xToBPnjOJtscFWGv/view?usp=sharing
 
 ## Arquitectura
+
+<img width="1692" height="929" alt="image" src="https://github.com/user-attachments/assets/9a55ac74-5415-4ed9-b205-197b50191600" />
+
+
 
 ```
                  ┌─────────────────────────┐        Job ETL (upsert idempotente)
