@@ -15,7 +15,11 @@ https://drive.google.com/file/d/12NT4Gd8R7VCd7zA6xToBPnjOJtscFWGv/view?usp=shari
 
 ## Arquitectura
 
-<img width="1692" height="929" alt="image" src="https://github.com/user-attachments/assets/9a55ac74-5415-4ed9-b205-197b50191600" />
+<img width="1492" height="929" alt="image" src="https://github.com/user-attachments/assets/9a55ac74-5415-4ed9-b205-197b50191600" />
+
+
+
+
 
 
 
