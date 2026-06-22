@@ -9,7 +9,7 @@ modelado de documentos, aggregation pipelines y diseño teórico de sharding/rep
 > Asignatura: EFMAS-DOBD20263 · Unidad 5 — Optimización de rendimiento · Equipo E01
 
 ---
-## PResetnacion y sustentecion de arquitectura
+## Pressentación y sustenteción de arquitectura
 
 https://drive.google.com/file/d/12NT4Gd8R7VCd7zA6xToBPnjOJtscFWGv/view?usp=sharing
 
